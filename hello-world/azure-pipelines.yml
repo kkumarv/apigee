@@ -1,0 +1,17 @@
+pool: apiee-test
+trigger:  none
+pr: none
+
+stages:
+- stage: stage1
+  displayName: stage1-displayname
+  condition: always()
+
+  jobs:
+  - job: firstjob
+    continueOnError: true
+    steps:
+    - script: |
+       echo "First echostatement"
+       ls
+      
