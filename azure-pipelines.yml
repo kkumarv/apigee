@@ -32,4 +32,4 @@ stages:
     - script: |
        echo $(repository_name)
         ls
-        newman run  resources/postman-integration-test/MTN_CICD.postman_collection.json -e resources/postman-integration-test/chenosis-dev.postman_environment.json
+        newman run  HelloWorld/resources/postman-integration-test/MTN_CICD.postman_collection.json -e HelloWorld/resources/postman-integration-test/chenosis-dev.postman_environment.json
