@@ -1,0 +1,18 @@
+pool: apiee-test
+trigger:  none
+pr: none
+
+stages:
+- stage: Precheck
+  displayName: Static-Code-Analysis
+  condition: always()
+
+  jobs:
+  - job: firstjob
+    continueOnError: false
+    steps:
+    - script: |
+       echo "First echostatement"
+       ls
+       cd HelloWorld
+       apigeelint -s HelloWorld/apiproxy -f table.js
