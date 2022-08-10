@@ -18,7 +18,7 @@ stages:
   - job: Codeanalysis
     continueOnError: false
     steps:
-    - task: validateDirScript@1
+    - task: ShellScript@2
       inputs:
         scriptPath: ./validateDir.sh
     - script: |
