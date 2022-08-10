@@ -7,7 +7,7 @@ variables:
     organisation: prod
   ${{ if ne( variables['Build.SourceBranchName'], 'main' ) }}: 
     organisation: nonprod
-  repositoryName: $(Buid.Repository.Name)
+  repositoryName: ${{repositoryName}}
 
 stages:
 - stage: Precheck
