@@ -31,8 +31,8 @@ stages:
     condition: always()
     steps:
     - script: |
-     
-       mvn install -Pdev -Dapigee.config.options=none
+       ls
+      # mvn install -Pdev -Dapigee.config.options=none
   - job: integrationtest
     continueOnError: false
     dependsOn: APIDeployment
