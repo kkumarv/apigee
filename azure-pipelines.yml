@@ -2,6 +2,9 @@ pool: apiee-test
 trigger:  none
 pr: none
 
+variables:
+  repository_name: $[replace(variables['BUILD.SOURCEBRANCH'], 'refs/heads/', '')]
+
 stages:
 - stage: Precheck
   displayName: Static-Code-Analysis
@@ -12,7 +15,7 @@ stages:
     continueOnError: false
     steps:
     - script: |
-       echo "First echostatement"
-       ls
-       cd apigee/HelloWorld
-       apigeelint -s HelloWorld/apiproxy -f table.js
+       echo $(repository_name)
+      #  ls
+      #  cd apigee/HelloWorld
+      #  apigeelint -s HelloWorld/apiproxy -f table.js
