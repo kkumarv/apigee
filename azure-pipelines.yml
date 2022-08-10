@@ -11,11 +11,25 @@ stages:
   condition: always()
 
   jobs:
-  - job: firstjob
+  - job: Codeanalysis
     continueOnError: false
     steps:
     - script: |
        echo $(repository_name)
-      #  ls
-      #  cd apigee/HelloWorld
-      #  apigeelint -s HelloWorld/apiproxy -f table.js
+       ls
+       cd apigee/HelloWorld
+       apigeelint -s HelloWorld/apiproxy -f table.js
+
+- stage: Deployment
+  displayName: API-Deployment
+  dependsOn: Precheck
+  condition: succeeded()
+
+  jobs:
+  - job: integrationtest
+    continueOnError: false
+    steps:
+    - script: |
+       echo $(repository_name)
+        ls
+        newman run  resources/postman-integration-test/MTN_CICD.postman_collection.json -e resources/postman-integration-test/chenosis-dev.postman_environment.json
