@@ -36,7 +36,7 @@ stages:
   - job: integrationtest
     continueOnError: false
     dependsOn: APIDeployment
-    condition: succeeded()ß
+    condition: succeeded()
     steps:
     - script: |
        echo $(repository_name)
