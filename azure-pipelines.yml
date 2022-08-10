@@ -7,7 +7,7 @@ variables:
     organisation: prod
   ${{ if ne( variables['Build.SourceBranchName'], 'main' ) }}: 
     organisation: nonprod
-    repositoryName: $(replace('$(Build.Repository.Name)', 'MTN-Group/', ''))
+    repositoryName: $(replace('$(Build.Repository.Name)', 'kkumarv', ''))
 
 stages:
 - stage: Precheck
