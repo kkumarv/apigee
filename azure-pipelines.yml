@@ -21,8 +21,7 @@ stages:
     - task: ShellScript@2
       inputs:
         scriptPath: ./validateDir.sh
-        args: 
-         arg1: 'krishna'
+        args: krishna kumar
     - script: |
        echo "$(repositoryName)"
        ls

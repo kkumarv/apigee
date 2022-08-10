@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Hello World"
 echo $1
+echo $1
 echo "AGENT_WORKFOLDER is $AGENT_WORKFOLDER"
 pwd
 ls
