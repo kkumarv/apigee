@@ -32,7 +32,8 @@ stages:
     steps:
     - script: |
        ls
-      # mvn install -Pdev -Dapigee.config.options=none
+       cd HelloWorld
+       mvn install -Pdev -Dapigee.config.options=none
   - job: integrationtest
     continueOnError: false
     dependsOn: APIDeployment
