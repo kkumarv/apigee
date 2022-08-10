@@ -19,7 +19,7 @@ stages:
     continueOnError: false
     steps:
     - script: |
-       
+       echo "$(repositoryName)"
        ls
        cd apigee/HelloWorld
        apigeelint -s HelloWorld/apiproxy -f table.js
